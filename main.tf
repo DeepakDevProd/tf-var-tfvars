@@ -140,4 +140,8 @@ resource "aws_instance" "tf-ec2" {
   tags = {
     Name = var.ec2_tag
   }
+  lifecycle {
+    # prevent_destroy = true
+    create_before_destroy = true
+  }
 }
